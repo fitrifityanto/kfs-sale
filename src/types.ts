@@ -7,6 +7,14 @@ export interface Product {
   deskripsi: string;
 }
 
+export interface Voucher {
+  kode: string;
+  diskon_persen: number;
+  min_belanja: number;
+  mulai: string;
+  berakhir: string;
+}
+
 export interface CartItem extends Product {
   quantity: number;
 }
