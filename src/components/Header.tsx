@@ -13,10 +13,10 @@ const Header: React.FC<HeaderProps> = ({ cartCount }) => {
         <div className="flex items-center gap-2">
           <div>
             <h1 className="text-2xl font-black tracking-tighter uppercase italic leading-none">
-              Gudang<span className="text-street-red">Diskon</span>
+              kickflip<span className="text-street-red">socks</span>
             </h1>
             <p className="text-[10px] text-gray-500 font-mono tracking-[0.2em] uppercase">
-              Streetwear Clearance Division
+              Turn Every Step into Style
             </p>
           </div>
         </div>
