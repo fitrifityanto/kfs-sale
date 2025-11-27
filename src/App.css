@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-street-red: #e60012;
+  --color-street-black: #000000;
+  --color-street-dark: #111110;
+  --color-street-gray: #1f1f1f;
+
+  --font-sans: "Inter", "sans-serif";
+}
+/* #root { */
+/*   max-width: 1280px; */
+/*   margin: 0 auto; */
+/*   padding: 2rem; */
+/*   text-align: center; */
+/* } */
+/**/
