@@ -18,3 +18,10 @@ export interface Voucher {
 export interface CartItem extends Product {
   quantity: number;
 }
+
+export interface CustomerData {
+  name: string;
+  phone: string;
+  address: string;
+  note: string;
+}
