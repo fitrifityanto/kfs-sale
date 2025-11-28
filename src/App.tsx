@@ -89,6 +89,8 @@ const App: React.FC = () => {
 
   const cartTotalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
+  const adminPhone = import.meta.env.VITE_ADMIN_PHONE;
+
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
       <Header
@@ -147,22 +149,24 @@ const App: React.FC = () => {
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="max-w-md">
               <h3 className="text-2xl font-black uppercase tracking-tighter italic mb-4">
-                Gudang<span className="text-street-red">Diskon</span>
+                kickflip<span className="text-street-red">socks</span>
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Premium streetwear clearance outlet. Authenticity guaranteed.
-                Defining the culture since 2024.
+                Old-school socks clearance. Grab your style before it’s gone..
               </p>
             </div>
             <div className="flex gap-8 text-sm font-bold uppercase tracking-widest text-gray-400">
-              <a href="#" className="hover:text-white transition-colors">
+              <a
+                href="https://instagram.com/kickflipsocks"
+                className="hover:text-white transition-colors"
+              >
                 Instagram
               </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Twitter
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Legal
+              <a
+                href={`https://wa.me/${adminPhone}`}
+                className="hover:text-white transition-colors"
+              >
+                Whatsapp
               </a>
             </div>
           </div>
