@@ -1,5 +1,5 @@
 import React from "react";
-import { ShoppingCart, Info } from "lucide-react";
+
 import type { Product } from "../types";
 import { formatRupiah } from "../utils/format";
 

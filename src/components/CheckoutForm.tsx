@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MessageCircle, X, Tag, ListFilter } from "lucide-react";
+import { MessageCircle, X, Tag } from "lucide-react";
 import type { CartItem, CustomerData, Voucher } from "../types";
 import { formatRupiah } from "../utils/format";
 import { vouchersData } from "../data/voucher";
