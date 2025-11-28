@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import ProductGrid from "./components/ProductGrid";
+import VoucherBanner from "./components/VoucherBanner";
 import Cart from "./components/Cart";
 import type { Product, CartItem } from "./types";
 import { productsData } from "./data/product.ts";
@@ -18,7 +19,7 @@ const fetchProducts = (): Promise<Product[]> => {
 const App: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  // const [cartCount, setCartCount] = useState<number>(0);
+
   const [cart, setCart] = useState<CartItem[]>([]);
   const [view, setView] = useState<"home" | "cart">("home");
 
@@ -95,6 +96,9 @@ const App: React.FC = () => {
         onCartClick={() => setView("cart")}
         onHomeClick={() => setView("home")}
       />
+
+      {/* Show Voucher Banner only on Home view */}
+      {view === "home" && <VoucherBanner />}
 
       <main className="flex-grow">
         {view === "home" ? (
