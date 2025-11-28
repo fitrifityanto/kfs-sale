@@ -24,14 +24,20 @@ export const validateVoucher = (
     };
   }
 
+  // --- REVISI LOGIKA TANGGAL ---
+
+  // 1. Ambil tanggal hari ini dan set ke tengah malam UTC (untuk tanggal murni)
   const today = new Date();
-  const startDate = new Date(voucher.mulai);
-  const endDate = new Date(voucher.berakhir);
+  today.setUTCHours(0, 0, 0, 0); // Menggunakan UTC untuk konsistensi
 
-  // Set time to midnight for fair date comparison
-  today.setHours(0, 0, 0, 0);
+  // 2. Ambil tanggal mulai dan berakhir, pastikan juga diinisialisasi pada 00:00:00 UTC
+  // Dengan menambahkan "T00:00:00Z" memastikan string "2025-11-28" diinterpretasikan dengan benar di UTC
+  const startDate = new Date(voucher.mulai + "T00:00:00Z");
+  // Tanggal berakhir perlu mencakup keseluruhan hari tersebut.
+  // Kita set batas akhir hari, yaitu 23:59:59 pada hari berakhir.
+  const endDate = new Date(voucher.berakhir + "T23:59:59Z");
 
-  if (today < startDate) {
+  if (today.getTime() < startDate.getTime()) {
     return {
       isValid: false,
       message: "Voucher is not active yet.",
@@ -39,13 +45,16 @@ export const validateVoucher = (
     };
   }
 
-  if (today > endDate) {
+  // Bandingkan today (00:00:00 UTC) dengan akhir hari (23:59:59 UTC)
+  if (today.getTime() > endDate.getTime()) {
     return {
       isValid: false,
       message: "Voucher has expired.",
       discountAmount: 0,
     };
   }
+
+  // --- AKHIR REVISI LOGIKA TANGGAL ---
 
   if (subtotal < voucher.min_belanja) {
     return {

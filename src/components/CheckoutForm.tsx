@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { MessageCircle, X, Tag } from "lucide-react";
+import { MessageCircle, X, Tag, ListFilter } from "lucide-react";
 import type { CartItem, CustomerData, Voucher } from "../types";
 import { formatRupiah } from "../utils/format";
 import { vouchersData } from "../data/voucher";
 import { validateVoucher } from "../utils/voucher";
+import VoucherListModal from "./VoucherListModal";
 
 interface CheckoutFormProps {
   cartItems: CartItem[];
@@ -29,6 +30,8 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ cartItems, subtotal }) => {
     type: "success" | "error";
     text: string;
   } | null>(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Reset voucher if subtotal changes and falls below min requirement
   useEffect(() => {
@@ -132,6 +135,11 @@ Mohon dihitungkan total + ongkirnya ya.`;
     );
   };
 
+  const handleSelectVoucher = (code: string) => {
+    setVoucherCode(code);
+    // handleApplyVoucher;
+  };
+
   return (
     <div className="bg-neutral-50 border border-gray-200 p-6 md:p-8 sticky top-24">
       <h3 className="text-2xl font-black uppercase tracking-tighter italic mb-6 border-b-2 border-black pb-2">
@@ -204,6 +212,15 @@ Mohon dihitungkan total + ongkirnya ya.`;
           <label className="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
             Voucher Code
           </label>
+
+          {/* Tombol untuk membuka Modal */}
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="text-xs font-bold uppercase text-black hover:text-street-red transition-colors"
+          >
+            View All Vouchers
+          </button>
 
           {!appliedVoucher ? (
             <div className="flex lg:flex-col gap-2 flex-row ">
@@ -305,6 +322,14 @@ Mohon dihitungkan total + ongkirnya ya.`;
           </p>
         </div>
       </form>
+
+      {/* Komponen Modal Voucher */}
+      <VoucherListModal
+        vouchers={vouchersData}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSelectVoucher={handleSelectVoucher}
+      />
     </div>
   );
 };
