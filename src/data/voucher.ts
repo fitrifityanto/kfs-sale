@@ -5,8 +5,8 @@ export const vouchersData: Voucher[] = [
     kode: "EASY20",
     diskon_persen: 20,
     min_belanja: 50000,
-    mulai: "2025-11-01",
-    berakhir: "2025-11-22",
+    mulai: "2025-12-01",
+    berakhir: "2025-12-24",
   },
   {
     kode: "WKND35",
