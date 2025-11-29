@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+## 🏷️ Clearance Event: Street Socks - Final Gear Drop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Clearance Event 35% | No Restocks. No Exceptions. Grab your gear before it's gone.**
 
-Currently, two official plugins are available:
+Aplikasi _e-commerce_ sederhana untuk menjual kaos kaki dengan sistem "Clearance Sale," di mana pemesanan dan _checkout_ dilakukan melalui WhatsApp untuk mempermudah proses.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ⚙️ Teknologi yang Digunakan (Tech Stack)
 
-## React Compiler
+Proyek ini dibangun menggunakan:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend _Framework_**: React (Vite)
+- **Bahasa**: TypeScript
+- **Styling**: Tailwind CSS
+- **Ikonografi**: Lucide React
+- **Navigasi**: Internal React _State_ Management (Tidak menggunakan _client-side router_)
 
-## Expanding the ESLint configuration
+### 🚀 Fitur Utama
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **View Management**: Mengelola tampilan antara halaman **Home** (Product Grid) dan **Cart** menggunakan _state_ `view` di komponen `App.tsx`.
+- **Clearance Product Listing**: Menampilkan daftar produk kaos kaki yang sedang di-**clearance** lengkap dengan nama, gambar, harga normal, dan detail diskon.
+  - _Source file_: `product.ts`, `ProductGrid.tsx`, `ProductCard.tsx`
+- **Shopping Cart**: Fungsionalitas untuk menambah, mengurangi jumlah (_quantity_), dan menghapus _item_ dari keranjang. Data keranjang disimpan di **LocalStorage**.
+  - _Source file_: `CartItem.tsx`, `App.tsx`
+- **Checkout Form**: Formulir untuk mengumpulkan data pemesan.
+- **Voucher/Discount Application**: Sistem penerapan _voucher_ tambahan di atas diskon _clearance_ dasar, lengkap dengan validasi kode, minimal belanja (_min_belanja_), dan masa berlaku.
+- **WhatsApp Order Generation**: Secara otomatis membuat pesan order terformat rapi yang siap dikirimkan ke nomor Admin via WhatsApp.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📂 Struktur Data Kunci
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Aplikasi ini mengelola data produk dan _voucher_ melalui file **TypeScript**.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+#### 1\. Produk (`productsData` di `product.ts`)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Setiap produk memiliki properti `id`, `nama`, `gambar`, `harga_normal`, `diskon_persen` (disetel 35%), dan `deskripsi`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### 2\. Voucher (`vouchersData` di `voucher.ts`)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Setiap _voucher_ memiliki `kode`, `diskon_persen`, `min_belanja`, `mulai`, dan `berakhir`.
+
+### 🛠️ Pengaturan Proyek (Setup)
+
+Untuk menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut:
+
+1.  **Clone Repository:**
+
+    ```bash
+    git clone [URL_REPOSITORY_ANDA]
+    cd [NAMA_FOLDER]
+    ```
+
+2.  **Install Dependencies:**
+
+    ```bash
+    npm install
+    # atau
+    yarn install
+    ```
+
+3.  **Setup Environment Variables:**
+    Anda perlu membuat file `.env.local` di _root_ proyek dan menentukan nomor WhatsApp Admin untuk fungsionalitas _checkout_.
+
+    ```
+    # .env.local
+    VITE_ADMIN_PHONE=[Nomor WhatsApp Admin (misal: 62812xxxxxxx)]
+    ```
+
+4.  **Run Development Server:**
+
+    ```bash
+    npm run dev
+    # atau
+    yarn dev
+    ```
+
+Aplikasi akan berjalan di `http://localhost:5173` (atau _port_ yang berbeda).
