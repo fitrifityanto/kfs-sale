@@ -12,14 +12,14 @@ export const vouchersData: Voucher[] = [
     kode: "WKND35",
     diskon_persen: 35,
     min_belanja: 75000,
-    mulai: "2025-11-28",
-    berakhir: "2025-11-30",
+    mulai: "2025-12-05",
+    berakhir: "2025-12-07",
   },
   {
     kode: "LAST45",
     diskon_persen: 45,
     min_belanja: 130000,
-    mulai: "2025-11-23",
-    berakhir: "2025-11-30",
+    mulai: "2025-12-25",
+    berakhir: "2025-12-31",
   },
 ];
