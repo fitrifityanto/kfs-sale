@@ -4,7 +4,7 @@ export const productsData: Product[] = [
   {
     id: 1,
     nama: "kk local made in local putih",
-    gambar: "/images/products/kk-local-made-in-local-putih.jpg",
+    gambar: "/images/products/kk-local-made-in-local-putih.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki lokal berkualitas warna putih.",
@@ -12,7 +12,7 @@ export const productsData: Product[] = [
   {
     id: 2,
     nama: "kk local pride strip biru merah biru putih",
-    gambar: "/images/products/kk-local-pride-strip-biru-merah-biru-putih.jpg",
+    gambar: "/images/products/kk-local-pride-strip-biru-merah-biru-putih.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi:
@@ -21,7 +21,7 @@ export const productsData: Product[] = [
   {
     id: 3,
     nama: "kk local strip biru merah biru putih",
-    gambar: "/images/products/kk-local-strip-biru-merah-biru-putih.jpg",
+    gambar: "/images/products/kk-local-strip-biru-merah-biru-putih.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi:
@@ -30,7 +30,7 @@ export const productsData: Product[] = [
   {
     id: 4,
     nama: "kk motif 70'S",
-    gambar: "/images/products/kk-motif-70-s.jpg",
+    gambar: "/images/products/kk-motif-70-s.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki motif 70'S warna putih yang keren.",
@@ -38,7 +38,7 @@ export const productsData: Product[] = [
   {
     id: 5,
     nama: "kk motif arrow-blue hitam",
-    gambar: "/images/products/kk-motif-arrow-blue-hitam.jpg",
+    gambar: "/images/products/kk-motif-arrow-blue-hitam.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki motif arrow-blue dengan warna dasar hitam.",
@@ -46,7 +46,7 @@ export const productsData: Product[] = [
   {
     id: 6,
     nama: "kk motif offside-red hitam",
-    gambar: "/images/products/kk-motif-offside-red-hitam.jpg",
+    gambar: "/images/products/kk-motif-offside-red-hitam.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki motif offside-red dengan warna dasar hitam.",
@@ -54,7 +54,7 @@ export const productsData: Product[] = [
   {
     id: 7,
     nama: "kk motif offside-yellow hitam",
-    gambar: "/images/products/kk-motif-offside-yellow-hitam.jpg",
+    gambar: "/images/products/kk-motif-offside-yellow-hitam.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki motif offside-yellow dengan warna dasar hitam.",
@@ -62,7 +62,7 @@ export const productsData: Product[] = [
   {
     id: 8,
     nama: "kk motif off the wall hitam",
-    gambar: "/images/products/kk-motif-off-the-wall-hitam.jpg",
+    gambar: "/images/products/kk-motif-off-the-wall-hitam.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki motif 'off the wall' dengan warna dasar hitam.",
@@ -70,7 +70,7 @@ export const productsData: Product[] = [
   {
     id: 9,
     nama: "kk motif off the wall putih",
-    gambar: "/images/products/kk-motif-off-the-wall-putih.jpg",
+    gambar: "/images/products/kk-motif-off-the-wall-putih.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki motif 'off the wall' dengan warna dasar putih.",
@@ -78,7 +78,7 @@ export const productsData: Product[] = [
   {
     id: 10,
     nama: "kk motif arrow-red hitam",
-    gambar: "/images/products/kk-motif-arrow-red-hitam.jpg",
+    gambar: "/images/products/kk-motif-arrow-red-hitam.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki motif arrow-red dengan warna dasar hitam.",
@@ -86,7 +86,7 @@ export const productsData: Product[] = [
   {
     id: 11,
     nama: "kk motif DON'T QUIT hitam",
-    gambar: "/images/products/kk-motif-don-t-quit-hitam.jpg",
+    gambar: "/images/products/kk-motif-don-t-quit-hitam.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki motif DON'T QUIT dengan warna dasar hitam.",
@@ -94,7 +94,7 @@ export const productsData: Product[] = [
   {
     id: 12,
     nama: "kk motif coffee",
-    gambar: "/images/products/kk-motif-coffee.jpg",
+    gambar: "/images/products/kk-motif-coffee.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki dengan motif coffee.",
@@ -102,7 +102,7 @@ export const productsData: Product[] = [
   {
     id: 13,
     nama: "kk motif notes",
-    gambar: "/images/products/kk-motif-notes.jpg",
+    gambar: "/images/products/kk-motif-notes.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki dengan motif notes.",
@@ -110,7 +110,7 @@ export const productsData: Product[] = [
   {
     id: 14,
     nama: "kk motif chicken",
-    gambar: "/images/products/kk-motif-chicken.jpg",
+    gambar: "/images/products/kk-motif-chicken.webp",
     harga_normal: 10000,
     diskon_persen: 35,
     deskripsi: "Kaos Kaki dengan chicken.",
