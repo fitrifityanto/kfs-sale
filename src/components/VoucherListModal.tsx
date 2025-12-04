@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { X, Tag, Copy, Check } from "lucide-react";
 import type { Voucher } from "../types";
 import { formatRupiah } from "../utils/format";
+import { isVoucherActive } from "../utils/isVoucherActive";
 
 interface VoucherListModalProps {
   vouchers: Voucher[];
@@ -20,22 +21,7 @@ const VoucherListModal: React.FC<VoucherListModalProps> = ({
 
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
-  // TANGGAL AKTIF (Gunakan UTC Time untuk perbandingan akurat)
-
-  const today = new Date("2025-11-28T00:00:00Z");
-
-  const activeVouchers = vouchers.filter((v) => {
-    // Inisialisasi tanggal mulai pada 00:00:00 UTC
-    const startDate = new Date(v.mulai + "T00:00:00Z");
-
-    // Inisialisasi tanggal berakhir pada 23:59:59 UTC
-    const endDate = new Date(v.berakhir + "T23:59:59Z");
-
-    const todayUTC = today.getTime();
-
-    // Check if today is between or equal to start and end dates
-    return todayUTC >= startDate.getTime() && todayUTC <= endDate.getTime();
-  });
+  const activeVouchers = vouchers.filter((v) => isVoucherActive(v));
 
   const handleCopy = (code: string) => {
     navigator.clipboard.writeText(code);

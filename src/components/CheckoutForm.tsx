@@ -3,7 +3,7 @@ import { MessageCircle, X, Tag } from "lucide-react";
 import type { CartItem, CustomerData, Voucher } from "../types";
 import { formatRupiah } from "../utils/format";
 import { vouchersData } from "../data/voucher";
-import { validateVoucher } from "../utils/voucher";
+import { validateVoucher } from "../utils/validateVoucher";
 import VoucherListModal from "./VoucherListModal";
 
 interface CheckoutFormProps {
