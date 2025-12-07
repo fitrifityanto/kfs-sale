@@ -26,12 +26,15 @@ export const validateVoucher = (
   }
 
   if (!isVoucherActive(voucher)) {
-    const today = new Date();
-    today.setUTCHours(0, 0, 0, 0);
-    const startDate = new Date(voucher.mulai + "T00:00:00Z");
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+
+    // Parse start date sebagai waktu lokal
+    const startDate = new Date(`${voucher.mulai}T00:00:00`);
     // const endDate = new Date(voucher.berakhir + "T23:59:59Z");
 
-    if (today.getTime() < startDate.getTime()) {
+    // Cek apakah tanggal hari ini (00:00) lebih kecil dari tanggal mulai (00:00)
+    if (now.getTime() < startDate.getTime()) {
       return {
         isValid: false,
         message: "Voucher is not active yet.",
@@ -39,7 +42,7 @@ export const validateVoucher = (
       };
     }
 
-    // Jika bukan karena belum aktif, pasti karena sudah kadaluarsa
+    // Jika logic sampai sini, berarti sudah melewati startDate, maka pasti expired
     return {
       isValid: false,
       message: "Voucher has expired.",
